@@ -1,0 +1,47 @@
+@page
+@model ConferenceRoomBookingModel
+@{
+    ViewData["Title"] = "Conference Room Booking";
+}
+
+<h2>Conference Room Booking</h2>
+
+<form id="bookingForm" method="post">
+    <div class="form-group">
+        <label for="employeeName">Employee Name</label>
+        <input type="text" class="form-control" id="employeeName" name="EmployeeName" required>
+    </div>
+    <div class="form-group">
+        <label for="bookingDate">Booking Date</label>
+        <input type="date" class="form-control" id="bookingDate" name="BookingDate" required>
+    </div>
+    <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input type="time" class="form-control" id="startTime" name="StartTime" required>
+    </div>
+    <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="time" class="form-control" id="endTime" name="EndTime" required>
+    </div>
+    <div class="form-group">
+        <label for="roomNumber">Room Number</label>
+        <select class="form-control" id="roomNumber" name="RoomNumber" required>
+            <option value="">Select Room</option>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <!-- Add more room options as needed -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="additionalNotes">Additional Notes</label>
+        <textarea class="form-control" id="additionalNotes" name="AdditionalNotes" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div id="message"></div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/bookingForm.js"></script>
+}
